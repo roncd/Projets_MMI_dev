@@ -1,0 +1,34 @@
+.liste-videos .video-conteneur {
+  position: relative;
+}
+
+.liste-videos .video-yt::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Couleur d'assombrissement */
+  opacity: 0; /* Initialement transparent */
+  transition: opacity 0.3s ease;
+}
+
+
+.liste-videos .video-yt {
+  width: 100%;
+  transition: transform 0.3s ease;
+}
+
+.liste-videos .video-conteneur:hover .video-yt {
+  transform: scale(0.95); /* Diminution de la taille de la vidéo au survol */
+  opacity: 0.7; /* Au survol, l'élément devient opaque */
+}
+
+
+.liste-videos .titre {
+  color: #707070;
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
