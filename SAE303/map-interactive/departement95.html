@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="map.css">
+    <link rel="stylesheet" href="departement.css">
+    <link rel="icon" href="Medias/Design_sans_titre__2_-removebg-preview.png" type="image/png" sizes="70x70">
+
+
+    <!-- MAP LEAFLET-->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
+    <title>Departement 95</title>
+</head>
+<body>
+    
+    <h1>Trouvez votre 
+        <a class="cinema" href="#list-section">cinéma</a>
+        !
+        <span class="icon">&#x1F37F;</span><!-- Emojipedia -->
+    </h1>
+    
+
+<div class="filtre">
+
+    <div class="filtre-recherche">
+    <input type="text" id="searchInput" placeholder="Trouvez votre cinéma ... ">
+    </div>
+
+    <div class="filtre-commune">
+        <label for="commune" onclick="toggleDropdown('commune')">Commune :</label>
+        <div class="commune-wrapper"></div>
+        <select id="commune" multiple class="hidden">
+            <option value="all" selected>Toutes les communes</option>
+            <option value="Argenteuil">Argenteuil</option>
+            <option value="Bezons">Bezons</option>
+            <option value="Cergy">Cergy</option>
+            <option value="Cormeilles-en-Parisis">Cormeilles-en-Parisis</option>
+            <option value="Domont">Domont</option>
+            <option value="Eaubonne">Eaubonne</option>
+            <option value="Enghien-les-Bains">Enghien-les-Bains</option>
+            <option value="Ermont">Ermont</option>
+            <option value="Fosses">Fosses</option>
+            <option value="Franconville">Franconville</option>
+            <option value="Garges-lès-Gonesse">Garges-lès-Gonesse</option>
+            <option value="Gonesse">Gonesse</option>
+            <option value="Goussainville">Goussainville</option>
+            <option value="L' Isle-Adam">L' Isle-Adam</option>
+            <option value="Jouy-le-Moutier">Jouy-le-Moutier</option>
+            <option value="Méry-sur-Oise">Méry-sur-Oise</option>
+            <option value="Montigny-lès-Cormeilles">Montigny-lès-Cormeilles</option>
+            <option value="Montmorency">Montmorency</option>
+            <option value="Pontoise">Pontoise</option>
+            <option value="Saint-Gratien">Saint-Gratien</option>
+            <option value="Saint-Ouen-l'Aumône">Saint-Ouen-l'Aumône</option>
+            <option value="Taverny">Taverny</option>
+            <option value="Vauréal">Vauréal</option>
+            <option value="Montigny-lès-Cormeilles">Montigny-lès-Cormeilles</option>
+            <option value="Sarcelles">Sarcelles</option>
+        </select>
+    </div>
+
+    <div class="filtre-range">
+        <label for="ecransRange" onclick="toggleDropdown('ecransRange','ecransRangeValue')">Ecrans minimum :</label>
+        <input type="range" class="hidden" id="ecransRange" min="0" max="50" step="1" value="0" oninput="updateEcransRangeValue()">
+        <span class="hidden" id="ecransRangeValue">0</span>
+    </div>
+
+
+    <div class="filtre-program">
+    <label for="programmateur" onclick="toggleDropdown('programmateur')">Programmateur :</label>
+    <select id="programmateur" multiple class="hidden">
+        <option value="all" selected>Tous les programmateurs</option>
+        <option value="UGC">UGC</option>
+        <option value="NC">NC</option>
+        <option value="Les cinemas GAUMONT-PATHE">Les cinemas GAUMONT-PATHE</option>
+        <option value="MK2">MK2</option>
+        <option value="MC4">MC4</option>
+        <option value="Xanthie Films">Xanthie Films</option>
+        <option value="GPCI">GPCI</option>
+        <option value="Les Films de la Rochelle">Les Films de la Rochelle</option>
+        <option value="AGORA CINEMAS">AGORA CINEMAS</option>
+        <option value="MICROMEGAS">MICROMEGAS</option>
+        <option value="C2L">C2L</option>
+        <option value="NOE">NOE</option>
+        <option value="VEO">VEO</option>
+        <option value="Montereau Point Com (Aubry)">Montereau Point Com (Aubry)</option>
+    </select>
+    </div>
+
+    <div class="filtre-search">
+    <button id="searchButton">Recherche</button>
+    </div>
+
+</div>
+
+    <p id="resultCount">Nombre de résultats : 0</p>
+
+    <button id="resetButton" onclick="resetFilters()"><img src="Medias/reset.png" alt=""></button>
+
+<div class="map-container">
+    <div id="map"></div>
+</div>
+
+    <p class="resultat">résultats</p>
+
+    <div class="liste-container" id="list-section">
+    <ul></ul>
+    </div>
+
+    <script src="departement95.js"></script>
+
+    <script>
+        function toggleDropdown(selectId, secondElementId) {
+            var select = document.getElementById(selectId);
+            select.classList.toggle('hidden');
+
+            if (secondElementId) {
+                var secondElement = document.getElementById(secondElementId);
+                secondElement.classList.toggle('hidden');
+            }
+        }
+    </script>
+
+    <p>Données sur l'année 2015*</p>
+
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="map.css">
+    <link rel="stylesheet" href="departement.css">
+    <link rel="icon" href="Medias/Design_sans_titre__2_-removebg-preview.png" type="image/png" sizes="70x70">
+
+
+    <!-- MAP LEAFLET-->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
+    <title>Departement 75</title>
+</head>
+
+
+
+<body>
+    
+    <h1>Trouvez votre 
+        <a class="cinema" href="#list-section">cinéma</a>
+        !
+        <span class="icon">&#x1F37F;</span><!-- Emojipedia -->
+    </h1>
+    
+
+<div class="filtre">
+
+    <div class="filtre-recherche">
+    <input type="text" id="searchInput" placeholder="Trouvez votre cinéma ... ">
+    </div>
+
+    <div class="filtre-commune">
+        <label for="commune" onclick="toggleDropdown('commune')">Commune :</label>
+        <div class="commune-wrapper"></div>
+        <select id="commune" multiple class="hidden">
+            <option value="all" selected>Tous les arrondissements</option>
+            <option value="Paris 1er Arrondissement">Paris 1er Arrondissement</option>
+            <option value="Paris 2e Arrondissement">Paris 2e Arrondissement</option>
+            <option value="Paris 3e Arrondissement">Paris 3e Arrondissement</option>
+            <option value="Paris 4e Arrondissement">Paris 4e Arrondissement</option>
+            <option value="Paris 5e Arrondissement">Paris 5e Arrondissement</option>
+            <option value="Paris 6e Arrondissement">Paris 6e Arrondissement</option>
+            <option value="Paris 7e Arrondissement">Paris 7e Arrondissement</option>
+            <option value="Paris 8e Arrondissement">Paris 8e Arrondissement</option>
+            <option value="Paris 9e Arrondissement">Paris 9e Arrondissement</option>
+            <option value="Paris 10e Arrondissement">Paris 10e Arrondissement</option>
+            <option value="Paris 11e Arrondissement">Paris 11e Arrondissement</option>
+            <option value="Paris 12e Arrondissement">Paris 12e Arrondissement</option>
+            <option value="Paris 13e Arrondissement">Paris 13e Arrondissement</option>
+            <option value="Paris 14e Arrondissement">Paris 14e Arrondissement</option>
+            <option value="Paris 15e Arrondissement">Paris 15e Arrondissement</option>
+            <option value="Paris 16e Arrondissement">Paris 16e Arrondissement</option>
+            <option value="Paris 17e Arrondissement">Paris 17e Arrondissement</option>
+            <option value="Paris 18e Arrondissement">Paris 18e Arrondissement</option>
+            <option value="Paris 19e Arrondissement">Paris 19e Arrondissement</option>
+            <option value="Paris 20e Arrondissement">Paris 20e Arrondissement</option>
+        </select>
+    </div>
+
+    <div class="filtre-range">
+        <label for="ecransRange" onclick="toggleDropdown('ecransRange','ecransRangeValue')">Ecrans minimum :</label>
+        <input type="range" class="hidden" id="ecransRange" min="0" max="50" step="1" value="0" oninput="updateEcransRangeValue()">
+        <span class="hidden" id="ecransRangeValue">0</span>
+    </div>
+
+
+    <div class="filtre-program">
+    <label for="programmateur" onclick="toggleDropdown('programmateur')">Programmateur :</label>
+    <select id="programmateur" multiple class="hidden">
+        <option value="all" selected>Tous les programmateurs</option>
+        <option value="UGC">UGC</option>
+        <option value="NC">NC</option>
+        <option value="Les cinemas GAUMONT-PATHE">Les cinemas GAUMONT-PATHE</option>
+        <option value="MK2">MK2</option>
+        <option value="MC4">MC4</option>
+        <option value="Xanthie Films">Xanthie Films</option>
+        <option value="GPCI">GPCI</option>
+        <option value="Les Films de la Rochelle">Les Films de la Rochelle</option>
+        <option value="AGORA CINEMAS">AGORA CINEMAS</option>
+        <option value="MICROMEGAS">MICROMEGAS</option>
+        <option value="C2L">C2L</option>
+        <option value="NOE">NOE</option>
+        <option value="VEO">VEO</option>
+        <option value="Montereau Point Com (Aubry)">Montereau Point Com (Aubry)</option>
+    </select>
+    </div>
+
+    <div class="filtre-search">
+    <button id="searchButton">Recherche</button>
+    </div>
+
+</div>
+
+    <p id="resultCount">Nombre de résultats : 0</p>
+
+    <button id="resetButton" onclick="resetFilters()"><img src="Medias/reset.png" alt=""></button>
+
+<div class="map-container">
+    <div id="map"></div>
+</div>
+
+    <p class="resultat">résultats</p>
+
+    <div class="liste-container" id="list-section">
+    <ul></ul>
+    </div>
+
+    <script src="departement75.js"></script>
+
+    <script>
+        function toggleDropdown(selectId, secondElementId) {
+            var select = document.getElementById(selectId);
+            select.classList.toggle('hidden');
+
+            if (secondElementId) {
+                var secondElement = document.getElementById(secondElementId);
+                secondElement.classList.toggle('hidden');
+            }
+        }
+    </script>
+
+    <p>Données sur l'année 2015*</p>
+    
+</body>
+
+</html>

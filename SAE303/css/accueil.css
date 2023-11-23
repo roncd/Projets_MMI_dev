@@ -1,0 +1,44 @@
+body {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.sous-titre {
+    color: rgb(255, 255, 255);
+    line-height: normal;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+/* Pour les écrans de taille 'md' (moyen ou supérieur) */
+@media (min-width: 768px) {
+    .sous-titre {
+        font-size: 1rem;
+        text-align: left;
+    }
+}
+
+.image {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .image {
+        width: 70%; /* Correspond à w-3/5 */
+    }
+}
+
+.image {
+    transform: rotate(-6deg);
+    transition: transform 0.7s ease-in-out;
+}
+
+.image:hover {
+    transform: rotate(6deg);
+    transition: transform 0.7s ease-in-out, scale 0.7s ease-in-out; /* Effet de zoom au survol */
+    transform-origin: center;
+    scale: 1.05;
+}
+

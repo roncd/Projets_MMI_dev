@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Accueil</title>
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+
+    <link rel="stylesheet" href="responsive-header/header1.css">
+    <link rel="stylesheet" href="responsive-header/header2.css">
+    <link rel="stylesheet" href="responsive-header/footer.css">
+    <link rel="stylesheet" href="css/accueil.css">
+    <link rel="icon" href="media/Design_sans_titre__2_-removebg-preview.png" type="image/png" sizes="70x70">
+
+    <link rel="stylesheet" href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css"/>
+    <link href="https://unpkg.com/@tailwindcss/custom-forms/dist/custom-forms.min.css" rel="stylesheet" />
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+
+      html {
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      }
+    </style>
+  </head>
+
+  <body class="leading-normal tracking-normal m-6 bg-cover bg-fixed" style="background-image: url('media/fond-cinema.jpeg');">
+  <!-- Header -->
+    <header class="site-header">
+      <div class="wrapper site-header__wrapper">
+          <a href="accueil.html" class="brand flex items-center justify-center text-indigo-400 no-underline hover:no-underline font-bold text-2xl lg:text-4xl" style="font-size: 2.5rem;">
+              <span class="bg-clip-text text-transparent bg-gradient-to-r from-red-400 via-red-500 to-red-500">CINEMA</span>
+          </a>
+          
+          <nav class="nav">
+              <button class="nav__toggle" aria-expanded="false" type="button">
+                <img src="responsive-header/hamburger-menu-icon-png.jpg" alt="Menu Burger">
+              </button>
+            </nav>
+            
+          <ul class="nav__wrapper">
+            <li class="nav__item"><a href="accueil.html">ACCUEIL</a></li>
+            <li class="nav__item"><a href="trouver-votre-cinema.html">CINEMA</a></li>
+            <li class="nav__item"><a href="about.html">À PROPOS</a></li>
+            <li class="nav__item"><a href="equipe.html">EQUIPE</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+   <script src="responsive-header/index.js"></script>
+
+  <!--Main-->
+  <div class="container pt-24 md:pt-36 mx-auto flex flex-wrap flex-col md:flex-row items-center">
+
+   <!--1ERE PARTIE-->
+    <div class="md:flex w-full mb-10">
+      <!--Left Col-->
+      <div class="w-full xl:w-3/5 p-12 overflow-hidden">
+      <img class="image" src="media/carte-IDF.png" alt="Carte de l'ile de Île-de-France" />
+      </div>
+
+      <!--Right Col-->
+      <div class="flex flex-col px-2 py-4 w-full xl:w-2/5 justify-center lg:items-start overflow-y-hidden">
+      <h1 class="my-4 text-3xl md:text-5xl text-white font-bold leading-tight text-center md:text-left mb-8">
+        TROUVE TON 
+        <span class="bg-clip-text text-transparent bg-gradient-to-r from-red-400 via-red-500 to-red-500">
+          CINÉMA
+        </span>
+      </h1>
+      <div class="sous-titre">
+        <p>
+          Trouvez facilement les cinémas en Île-de-France proche de chez vous !
+          Effectuez également des recherches en fonction du programmateur, du nombre d'écrans et bien d'autres critères.
+        </p>
+      </div>
+      <div class="w-full md:w-3/4 lg:w-2/3 xl:w-1/2 mt-10 rounded-lg text-center md:text-left">
+        <a href="trouver-votre-cinema.html">
+        <button
+        class="bg-gradient-to-r from-red-800 to-red-500 hover:from-pink-800 hover:to-pink-500 text-white font-bold py-2 px-4 rounded focus:ring transform transition hover:scale-105 duration-300 ease-in-out md:ml-auto md:mr-0" 
+        type="button">
+          VOIR MAP
+        </button>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!--2E PARTIE-->
+  <div class="md:flex w-full mb-10">
+     <!--left Col-->
+     <div class="w-full xl:w-3/5 p-16 overflow-hidden">
+      <img class="image" src="media/Movie-Clapperboard.svg" alt="Clap de film" />
+    </div>
+
+    <!--Right Col-->
+    <div class="flex flex-col px-2 py-4 w-full xl:w-2/5 justify-center lg:items-start overflow-y-hidden">
+      <h1 class="my-4 text-3xl md:text-5xl text-white font-bold leading-tight text-center md:text-left mb-8">
+        DÉCOUVRE NOTRE
+        <span class="bg-clip-text text-transparent bg-gradient-to-r from-red-400 via-red-500 to-red-500">
+          ÉQUIPE
+        </span>
+      </h1>
+      <div class="sous-titre">
+        <p>
+          Plongez dans l'univers captivant de notre équipe triomphante composée de quatre passionnés de cinéma !
+          <br>Nous avons uni nos compétences pour créer un site exceptionnel doté d'une map interactive, offrant une expérience inégalée pour tous les cinéphiles d'Île-de-France.
+        </p>
+      </div>
+      <div class="w-full md:w-3/4 lg:w-2/3 xl:w-1/2 mt-10 rounded-lg text-center md:text-left">
+        <a href="equipe.html">
+        <button
+        class="bg-gradient-to-r from-red-800 to-red-500 hover:from-pink-800 hover:to-pink-500 text-white font-bold py-2 px-4 rounded focus:ring transform transition hover:scale-105 duration-300 ease-in-out md:ml-auto md:mr-0" 
+        type="button" >VOIR ÉQUIPE
+        </button>
+        </a>
+      </div>
+    </div>
+  </div>
+  
+
+    <!--3E PARTIE-->
+    <div class="md:flex w-full mb-10">
+    <!--Left Col-->
+    <div class="w-full xl:w-3/5 p-12 overflow-hidden">
+    <img class="image" src="media/tickets.png" alt="Tickets de cinémas" />
+    </div>
+
+     <!--Right Col-->
+
+     <div class="flex flex-col px-2 py-4 w-full xl:w-2/5 justify-center lg:items-start overflow-y-hidden">
+      <h1 class="my-4 text-3xl md:text-5xl text-white font-bold leading-tight text-center md:text-left mb-8">
+        <span class="bg-clip-text text-transparent bg-gradient-to-r from-red-400 via-red-500 to-red-500">
+          À PROPOS
+        </span>DU SITE
+      </h1>
+      <div class="sous-titre">
+        <p>
+          Retrouvez toutes les informations que vous souhaitez savoir sur la création de notre site.
+      </div>
+      <div class="w-full md:w-3/4 lg:w-2/3 xl:w-1/2 mt-10 rounded-lg text-center md:text-left">
+        <a href="about.html">
+        <button
+        class="bg-gradient-to-r from-red-800 to-red-500 hover:from-pink-800 hover:to-pink-500 text-white font-bold py-2 px-4 rounded focus:ring transform transition hover:scale-105 duration-300 ease-in-out md:ml-auto md:mr-0" 
+        type="button">
+          VOIR +
+        </button>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+      <!--Footer-->
+    <footer class="site-footer">
+      <nav class="navigation-externe">
+          <ul class="reseaux-sociaux">
+              <li>
+                  <a href="https://www.facebook.com/CYCergyParisUniversite/?locale=fr_FR" target="_blank">Facebook</a>
+              </li>
+              <li>
+                  <a href="https://twitter.com/UniversiteCergy?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" target="_blank">Twitter </a>
+              </li>
+              <li>
+                  <a href="https://www.cyu.fr/" target="_blank">Université CY Paris Université</a>
+              </li>
+              <li>
+                  <a href="">• Remonter </a>
+              </li>
+          </ul>
+          <p>2023-2024 - BUT MMI - CY Paris Université</p>
+      </nav>
+
+      <img src="media/logo-cyu-blanc.png" alt="Logo CY Paris Université">
+  </footer>
+  <!--Footer-->
+  </body>
+</html>

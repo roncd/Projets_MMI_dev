@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="map.css">
+    <link rel="stylesheet" href="departement.css">
+    <link rel="icon" href="Medias/Design_sans_titre__2_-removebg-preview.png" type="image/png" sizes="70x70">
+
+
+    <!-- MAP LEAFLET-->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
+    <title>Departement 77</title>
+</head>
+<body>
+    
+    <h1>Trouvez votre 
+        <a class="cinema" href="#list-section">cinéma</a>
+        !
+        <span class="icon">&#x1F37F;</span><!-- Emojipedia -->
+    </h1>
+    
+
+<div class="filtre">
+
+    <div class="filtre-recherche">
+    <input type="text" id="searchInput" placeholder="Trouvez votre cinéma ... ">
+    </div>
+
+    <div class="filtre-commune">
+        <label for="commune" onclick="toggleDropdown('commune')">Commune :</label>
+        <div class="commune-wrapper"></div>
+        <select id="commune" multiple class="hidden">
+            <option value="all" selected>Toutes les communes</option>
+            <option value="Brie-Comte-Robert">Brie-Comte-Robert</option>
+            <option value="Champagne-sur-Seine">Champagne-sur-Seine</option>
+            <option value="Chelles">Chelles</option>
+            <option value="Chessy">Chessy</option>
+            <option value="Combs-la-Ville">Combs-la-Ville</option>
+            <option value="Coulommiers">Coulommiers</option>
+            <option value="Dammarie-les-Lys">Dammarie-les-Lys</option>
+            <option value="Fontainebleau">Fontainebleau</option>
+            <option value="Lagny-sur-Marne">Lagny-sur-Marne</option>
+            <option value="Lieusaint">Lieusaint</option>
+            <option value="Meaux">Meaux</option>
+            <option value="Melun">Melun</option>
+            <option value="Mitry-Mory">Mitry-Mory</option>
+            <option value="Moissy-Cramayel">Moissy-Cramayel</option>
+            <option value="Mons-en-Montois">Mons-en-Montois</option>
+            <option value="Nangis">Nangis</option>
+            <option value="Nemours">Nemours</option>
+            <option value="Noisiel">Noisiel</option>
+            <option value="Ozoir-la-Ferrière">Ozoir-la-Ferrière</option>
+            <option value="Pontault-Combault">Pontault-Combault</option>
+            <option value="Provins">Provins</option>
+            <option value="Roissy-en-Brie">Roissy-en-Brie</option>
+            <option value="Savigny-le-Temple">Savigny-le-Temple</option>
+            <option value="Saint-Fargeau-Ponthierry">Saint-Fargeau-Ponthierry</option>
+            <option value="Torcy">Torcy</option>
+            <option value="Vaires-sur-Marne">Vaires-sur-Marne</option>
+            <option value="Varennes-sur-Seine">Varennes-sur-Seine</option>
+            <option value="Vaux-le-Pénil">Vaux-le-Pénil</option>
+        </select>
+    </div>
+
+    <div class="filtre-range">
+        <label for="ecransRange" onclick="toggleDropdown('ecransRange','ecransRangeValue')">Ecrans minimum :</label>
+        <input type="range" class="hidden" id="ecransRange" min="0" max="50" step="1" value="0" oninput="updateEcransRangeValue()">
+        <span class="hidden" id="ecransRangeValue">0</span>
+    </div>
+
+
+    <div class="filtre-program">
+    <label for="programmateur" onclick="toggleDropdown('programmateur')">Programmateur :</label>
+    <select id="programmateur" multiple class="hidden">
+        <option value="all" selected>Tous les programmateurs</option>
+        <option value="UGC">UGC</option>
+        <option value="NC">NC</option>
+        <option value="Les cinemas GAUMONT-PATHE">Les cinemas GAUMONT-PATHE</option>
+        <option value="MK2">MK2</option>
+        <option value="MC4">MC4</option>
+        <option value="Xanthie Films">Xanthie Films</option>
+        <option value="GPCI">GPCI</option>
+        <option value="Les Films de la Rochelle">Les Films de la Rochelle</option>
+        <option value="AGORA CINEMAS">AGORA CINEMAS</option>
+        <option value="MICROMEGAS">MICROMEGAS</option>
+        <option value="C2L">C2L</option>
+        <option value="NOE">NOE</option>
+        <option value="VEO">VEO</option>
+        <option value="Montereau Point Com (Aubry)">Montereau Point Com (Aubry)</option>
+    </select>
+    </div>
+
+    <div class="filtre-search">
+    <button id="searchButton">Recherche</button>
+    </div>
+
+</div>
+
+    <p id="resultCount">Nombre de résultats : 0</p>
+
+    <button id="resetButton" onclick="resetFilters()"><img src="Medias/reset.png" alt=""></button>
+
+<div class="map-container">
+    <div id="map"></div>
+</div>
+
+    <p class="resultat">résultats</p>
+
+    <div class="liste-container" id="list-section">
+    <ul></ul>
+    </div>
+
+    <script src="departement77.js"></script>
+
+    <script>
+        function toggleDropdown(selectId, secondElementId) {
+            var select = document.getElementById(selectId);
+            select.classList.toggle('hidden');
+
+            if (secondElementId) {
+                var secondElement = document.getElementById(secondElementId);
+                secondElement.classList.toggle('hidden');
+            }
+        }
+    </script>
+
+    <p>Données sur l'année 2015*</p>
+
+</body>
+</html>

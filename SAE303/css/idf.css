@@ -1,0 +1,17 @@
+.map__image{
+    width: 50%;
+    float: left;
+
+}
+
+.map__image path{
+    fill: lightgray;
+    stroke: black;
+    stroke-width: 1px;
+    transition: color 0.3s;
+}
+
+.map__image path:hover{
+    fill: lightcoral;
+}
+

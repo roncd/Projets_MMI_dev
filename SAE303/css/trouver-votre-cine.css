@@ -1,0 +1,116 @@
+.titre{
+    text-align: center;
+    color: white;
+    font-size: 45px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+  }
+  
+
+  .sous-titre {
+    text-align: left;
+    color: white;
+    font-size: 12px;
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+
+  }
+
+  .presentation-texte {
+    text-align: center;
+    font-size: 1.2em;
+    color: #ffffff; /* Couleur du texte, ajustez selon votre thème */
+    margin: 20px 0; /* Marge autour du texte */
+  }
+
+  .cinema-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.cinema {
+    text-align: center;
+    padding: 20px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.cinema:hover {
+    background-color: rgba(255, 0, 0, 0.2); /* Ajout d'une légère teinte rouge au survol */
+}
+
+.cinema img {
+    width: 100%;
+    height: 200px; /* Définissez la hauteur souhaitée */
+    object-fit: cover; /* Pour conserver les proportions et couvrir la zone */
+    border-radius: 5px;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease-in-out; /* Ajout de l'effet de zoom */
+}
+
+.cinema:hover img {
+    transform: scale(1.1); /* Zoom au survol */
+}
+
+.cinema h3, .cinema p {
+    color: white;
+    transition: color 0.3s ease-in-out; /* Ajout de la transition de couleur au survol */
+}
+
+.cinema:hover h3 {
+    color: red; /* Couleur rouge au survol */
+}
+
+.cinema h3 {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.cinema p {
+    font-size: 1em;
+    margin-bottom: 15px;
+}
+
+/* Styles pour la section carte + liste des départements */
+.map-and-list-container {
+    display: flex;
+    margin-top: 20px;
+}
+
+.departement-list {
+    max-width: 300px;
+    margin-top: 30px;
+}
+
+.departement-list h3 {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #ffffff;
+
+}
+
+.departement-list ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.departement-list li {
+    margin-bottom: 5px;
+}
+
+
+.departement-list a {
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s ease;
+}
+
+.departement-list a:hover {
+    color:  lightcoral; /* Changez la couleur au survol selon votre thème */
+}
+
+

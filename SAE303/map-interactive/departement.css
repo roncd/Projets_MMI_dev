@@ -1,0 +1,159 @@
+/* BODY */
+body{
+    background-image: url(Medias/Accueil2.png);
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: white;
+}
+
+/* TITRE */
+h1{
+    text-align: center;
+}
+a.cinema{
+    display: inline-block;
+    background-image: linear-gradient(to right, rgb(153 27 27), rgb(239 68 68));
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    text-transform: uppercase;
+    transition: all 0.2s ease;
+}
+a.cinema:hover{
+    background-image: linear-gradient(to right, rgb(157 23 77), rgb(236 72 153));
+    transform: translateY(-5px);
+}
+
+/* FILTRES */
+.filtre{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 5%;
+}
+
+
+label, select{
+    display: block;
+}
+label{
+    background-image: linear-gradient(to right, rgb(153 27 27), rgb(239 68 68));
+    color: white;
+    text-align: center;
+    font-weight: bolder;
+    padding: 7px;
+    width: 120%;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+label:hover{
+    background-image: linear-gradient(to right, rgb(157 23 77), rgb(236 72 153));
+    transform: translateY(-5px);
+}
+
+select.hidden{
+    border: 2px solid #C02323;
+    display: none;
+}
+input.hidden{
+    display: none;
+}
+span.hidden{
+    display: none;
+}
+
+#ecransRangeValue{
+    font-weight: bolder;
+    color: #C02323;
+}
+
+/* RECHERCHER UN CINEMA */
+#searchInput{
+    background-image: linear-gradient(to right, rgb(153 27 27), rgb(239 68 68));
+    border: 1px solid white;
+    border-radius: 10px;
+    width: 190px;
+    padding: 7px;
+}
+#searchInput::placeholder{
+    color: white;
+}
+input{
+    color: white;
+}
+
+
+/* BOUTTONS */
+button{
+    cursor: pointer;
+}
+
+#searchButton{
+    background-color: white;
+    color: #C02323;
+    font-weight: bolder;
+    padding: 7px;
+    width: 120%;
+    border: 2px solid white;
+    border-radius: 10px;
+    width: 120%;
+    transition: transform 0.3s ease;
+    
+}
+#searchButton:hover{
+    background-image: linear-gradient(to right, rgb(157 23 77), rgb(236 72 153));
+    color: white;
+    transform: scale(1.1);
+}
+
+#resultCount{
+    margin-left: 5%;
+    margin-top: 5%;
+    text-decoration: overline;
+}
+
+#resetButton{
+    margin-left: 5%;
+    background-image: linear-gradient(to right, rgb(153 27 27), rgb(239 68 68));
+    border: solid black;
+    border-radius: 10px;
+    padding: 5px;
+}
+#resetButton img{
+    width: 20px;
+    height: auto;
+}
+
+
+/* RESULTATS / LISTES */
+.resultat{
+    text-decoration: underline;
+    text-transform: uppercase;
+    margin-left: 5%;
+    margin-top: 5%;
+    font-size: larger;
+    font-weight: bolder;
+}
+
+#list-section{
+    background-color: black;
+    border-radius: 10px;
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-bottom: 15%;
+    padding: 3%;
+}
+ul{
+    list-style: '📽️';
+}
+
+hr{
+    border: 1px solid rgb(153 27 27);
+    border-radius: 10px;
+    width: 30rem;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}

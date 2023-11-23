@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="map.css">
+    <link rel="stylesheet" href="departement.css">
+
+    <!-- MAP LEAFLET-->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <link rel="icon" href="Medias/Design_sans_titre__2_-removebg-preview.png" type="image/png" sizes="70x70">
+
+
+    <title>Departement 92</title>
+</head>
+<body>
+    
+    <h1>Trouvez votre 
+        <a class="cinema" href="#list-section">cinéma</a>
+        !
+        <span class="icon">&#x1F37F;</span><!-- Emojipedia -->
+    </h1>
+    
+
+<div class="filtre">
+
+    <div class="filtre-recherche">
+    <input type="text" id="searchInput" placeholder="Trouvez votre cinéma ... ">
+    </div>
+
+    <div class="filtre-commune">
+        <label for="commune" onclick="toggleDropdown('commune')">Commune :</label>
+        <div class="commune-wrapper"></div>
+        <select id="commune" multiple class="hidden">
+            <option value="all" selected>Toutes les communes</option>
+            <option value="Antony">Antony</option>
+            <option value="Asnières-sur-Seine">Asnières-sur-Seine</option>
+            <option value="Bagneux">Bagneux</option>
+            <option value="Bois-Colombes">Bois-Colombes</option>
+            <option value="Boulogne-Billancourt">Boulogne-Billancourt</option>
+            <option value="Bourg-la-Reine">Bourg-la-Reine</option>
+            <option value="Châtenay-Malabry">Châtenay-Malabry</option>
+            <option value="Châtillon">Châtillon</option>
+            <option value="Chaville">Chaville</option>
+            <option value="Clamart">Clamart</option>
+            <option value="Clichy">Clichy</option>
+            <option value="Colombes">Colombes</option>
+            <option value="Courbevoie">Courbevoie</option>
+            <option value="Fontenay-aux-Roses">Fontenay-aux-Roses</option>
+            <option value="Garches">Garches</option>
+            <option value="Gennevilliers">Gennevilliers</option>
+            <option value="Issy-les-Moulineaux">Issy-les-Moulineaux</option>
+            <option value="Levallois-Perret">Levallois-Perret</option>
+            <option value="Malakoff">Malakoff</option>
+            <option value="Meudon">Meudon</option>
+            <option value="Montrouge">Montrouge</option>
+            <option value="Nanterre">Nanterre</option>
+            <option value="Neuilly-sur-Seine">Neuilly-sur-Seine</option>
+            <option value="Le Plessis-Robinson">Le Plessis-Robinson</option>
+            <option value="Puteaux">Puteaux</option>
+            <option value="Rueil-Malmaison">Rueil-Malmaison</option>
+            <option value="Sceaux">Sceaux</option>
+            <option value="Sèvres">Sèvres</option>
+            <option value="Suresnes">Suresnes</option>
+            <option value="Saint-Cloud">Saint-Cloud</option>
+            <option value="Vanves">Vanves</option>
+            <option value="Vaucresson">Vaucresson</option>
+            <option value="Ville-d'Avray">Ville-d'Avray</option>
+            <option value="Villeneuve-la-Garenne">Villeneuve-la-Garenne</option>
+        </select>
+    </div>
+
+    <div class="filtre-range">
+        <label for="ecransRange" onclick="toggleDropdown('ecransRange','ecransRangeValue')">Ecrans minimum :</label>
+        <input type="range" class="hidden" id="ecransRange" min="0" max="50" step="1" value="0" oninput="updateEcransRangeValue()">
+        <span class="hidden" id="ecransRangeValue">0</span>
+    </div>
+
+
+    <div class="filtre-program">
+    <label for="programmateur" onclick="toggleDropdown('programmateur')">Programmateur :</label>
+    <select id="programmateur" multiple class="hidden">
+        <option value="all" selected>Tous les programmateurs</option>
+        <option value="UGC">UGC</option>
+        <option value="NC">NC</option>
+        <option value="Les cinemas GAUMONT-PATHE">Les cinemas GAUMONT-PATHE</option>
+        <option value="MK2">MK2</option>
+        <option value="MC4">MC4</option>
+        <option value="Xanthie Films">Xanthie Films</option>
+        <option value="GPCI">GPCI</option>
+        <option value="Les Films de la Rochelle">Les Films de la Rochelle</option>
+        <option value="AGORA CINEMAS">AGORA CINEMAS</option>
+        <option value="MICROMEGAS">MICROMEGAS</option>
+        <option value="C2L">C2L</option>
+        <option value="NOE">NOE</option>
+        <option value="VEO">VEO</option>
+        <option value="Montereau Point Com (Aubry)">Montereau Point Com (Aubry)</option>
+    </select>
+    </div>
+
+    <div class="filtre-search">
+    <button id="searchButton">Recherche</button>
+    </div>
+
+</div>
+
+    <p id="resultCount">Nombre de résultats : 0</p>
+
+    <button id="resetButton" onclick="resetFilters()"><img src="Medias/reset.png" alt=""></button>
+
+<div class="map-container">
+    <div id="map"></div>
+</div>
+
+    <p class="resultat">résultats</p>
+
+    <div class="liste-container" id="list-section">
+    <ul></ul>
+    </div>
+
+    <script src="departement92.js"></script>
+
+    <script>
+        function toggleDropdown(selectId, secondElementId) {
+            var select = document.getElementById(selectId);
+            select.classList.toggle('hidden');
+
+            if (secondElementId) {
+                var secondElement = document.getElementById(secondElementId);
+                secondElement.classList.toggle('hidden');
+            }
+        }
+    </script>
+
+    <p>Données sur l'année 2015*</p>
+
+</body>
+</html>
